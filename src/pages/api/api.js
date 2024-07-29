@@ -4,7 +4,7 @@ import axios from "axios";
 import { ACCESS_TOKEN } from "./constants";
 
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/api",
+  baseURL: "http://64.23.228.166:8080/api",
 });
 
 api.interceptors.request.use(

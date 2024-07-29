@@ -38,7 +38,7 @@ const HeaderTwo = () => {
                      <div className="logo-area d-flex align-items-center">
                         <div className="logo">
                            <Link href="/">
-                              <h1 className="text-black">Holy HMO</h1>
+                              <img src="/assets/img/logo/logo.png" alt="logo" style={{width: 300}} />
                            </Link>
                         </div>
                      </div>
