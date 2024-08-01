@@ -1,4 +1,3 @@
-import blog_masonry_data from "@/src/data/blog-masonry-data";
 import Link from "next/link";
 import React from "react";
 
@@ -10,52 +9,35 @@ const BlogMasonryArea = () => {
           <div className="row">
             <div className="col-lg-12">
               <div className="section-title mb-65 text-center">
-                <h2 className="tp-section-title mb-20">Latest Blogs & News</h2>
+                <h2 className="tp-section-title mb-20">Lugares de Interés</h2>
               </div>
             </div>
           </div>
           <div className="row mb-20">
-            {blog_masonry_data.map((item, i) => (
-              <div key={i} className="col-lg-4 col-md-6">
+            
+              <div className="col-lg-4 col-md-6">
                 <div
-                  className="tp-blog mb-40 wow fadeInUp"
-                  data-wow-duration=".8s"
-                  data-wow-delay=".4s"
+                  className="tp-blog mb-40"
                 >
                   <div className="tp-blog__thumb p-relative">
                     <div className="fix blog-round">
                       <Link href="/blog-details">
-                        <img src={item.img} alt="blog-img" />
+                        <img src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=" alt="blog-img" />
                       </Link>
-                    </div>
-                    <div className="tp-blog__meta-ab">
-                      <Link href="/blog-details">{item.category}</Link>
-                      <span>-</span>
-                      <Link href="/blog-details">{item.data}</Link>
                     </div>
                   </div>
                   <div className="tp-blog__content blog-box p-relative">
                     <h3 className="tp-blog__title mb-15 mt-20">
-                      <Link href="/blog-details">{item.title}</Link>
+                      <Link href="/blog-details">Nombre del lugar</Link>
                     </h3>
-                    <p>{item.des}</p>
+                    <p>Descripción del lugar</p>
                     <span>
-                      <i className="fi fi-rr-clock"></i>
-                      {" "}{item.post_time}
+                      <p>Dirección</p>
                     </span>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="blog-btn text-center">
-                <Link href="/blog-grid" className="tp-btn">
-                  All Blog
-                </Link>
-              </div>
-            </div>
+         
           </div>
         </div>
       </section>

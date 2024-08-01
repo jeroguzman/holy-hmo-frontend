@@ -8,6 +8,7 @@ import esLocale from "moment/locale/es";
 const CourseDetailsArea = ({setEvent}) => {
    
    const [comment, setComment] = useState("");
+   const [email, setEmail] = useState(localStorage.getItem("email"));
    const [evento, setEvento] = useState({
       name: "",
       description: "",
@@ -21,8 +22,20 @@ const CourseDetailsArea = ({setEvent}) => {
 
    useEffect(() => {
    if (typeof window !== "undefined") {
-         getEvent();
-      }
+         if (localStorage.getItem("email")) {
+            getEvent();
+         } else {
+            Swal.fire({
+               title: "Inicia sesión para ver el evento",
+               icon: "error",
+               confirmButtonText: "Aceptar",
+               confirmButtonColor: "#f76c6c",
+            }).then((result) => {
+               if (result.isConfirmed) {
+                  window.location.href = "/iniciar-sesion";
+               }
+            });
+         }}
    }, []);
 
    const getEvent = async () => {
@@ -75,6 +88,7 @@ const CourseDetailsArea = ({setEvent}) => {
     return (
       console.log(evento),
         <>
+        {localStorage.getItem("email") ? (
          <section className="c-details-area pt-120 pb-50 wow fadeInUp" data-wow-duration=".8s" data-wow-delay=".2s">
          <div className="container">
             <div className="row">
@@ -97,7 +111,7 @@ const CourseDetailsArea = ({setEvent}) => {
                               </li>
 
                               <li><span>{moment(evento.datetime).format('LL')} a las {moment(evento.datetime).format('LT')} horas</span></li>
-                              <li><img src="/assets/img/icon/c-meta-02.png" alt="meta-icon" /> <span>{evento.attendance} Asistentes</span></li>
+                              <li><img src="/assets/img/icon/c-meta-02.png" alt="meta-icon" /> <span>{evento.attendance} {evento.attendance > 1 ? 'asistentes' : evento.attendance === 0 ? 'asistente' : 'asistente'}</span></li>
                               <li><img src="/assets/img/icon/c-meta-03.png" alt="meta-icon" /> <span>{evento.comments.length} Comentarios</span></li>
                               {!evento.attending ? (
                                  <button className="bg-orange-500 text-white w-full py-3 rounded-md mt-4" onClick={attendEvent}>Asistir al evento</button>
@@ -187,7 +201,10 @@ const CourseDetailsArea = ({setEvent}) => {
             </div>
          </div>
       </section>
-        </>
+      ) : (
+         null
+      )}
+      </>
     );
 };
 

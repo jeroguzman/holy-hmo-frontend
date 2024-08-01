@@ -9,7 +9,6 @@ const BlogMasonry = () => {
     <>
       <Breadcrumb title="Lugares" subtitle="Lugares" />
       <BlogMasonryArea />
-      <CounterArea />
     </>
   );
 };

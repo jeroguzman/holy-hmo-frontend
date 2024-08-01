@@ -19,23 +19,23 @@ const {img_1, img_2, img_3, title, des} = about_two_bg
 const about_circle = [
   {
     id: 1,
-    icon: "fi fi-rr-paper-plane",
-    text: "Online Courses",
+    icon: "fi fi-rr-music-alt",
+    text: "Eventos",
   },
   {
     id: 2,
-    icon: "fi fi-rr-user",
-    text: "Expert Trainer",
+    icon: "fi fi-rr-laptop",
+    text: "Noticias",
   },
   {
     id: 3,
-    icon: "fi fi-rr-document",
-    text: "Get Certificate",
+    icon: "fi fi-rr-book-alt",
+    text: "Enseñanzas",
   },
   {
     id: 4,
-    icon: "fi fi-rr-calendar",
-    text: "Life Time Access",
+    icon: "fi fi-rr-user",
+    text: "Testimonios",
   },
 ];
 
@@ -69,12 +69,12 @@ const AboutArea = () => {
             <div className="col-xl-5 col-lg-6 col-md-12 col-12">
               <div className="tp-abcircle-content ml-65 mb-60">
                 <div className="section-title mb-35">
-                  <span className="tp-sub-title-box mb-15">About us</span>
+                  <span className="tp-sub-title-box mb-15">Nosotros</span>
                   <h2 className="tp-section-title mb-20">
-                    {title}
+                    Bienvenidos a Holy HMO
                   </h2>
                   <p>
-                     {des}
+                  Holy HMO es una comunidad en línea dedicada a apoyar, inspirar y conectar a jóvenes cristianos en la ciudad de Hermosillo. Nuestro objetivo es proporcionar un espacio donde puedas crecer en tu fe, encontrar recursos útiles y establecer relaciones significativas con otros jóvenes que comparten tus creencias.
                   </p>
                 </div>
                 <div className="about-circle-list mb-40">
@@ -88,8 +88,8 @@ const AboutArea = () => {
                   </ul>
                 </div>
                 <div className="tp-ab-circle-btn">
-                  <Link href="/about" className="tp-btn">
-                    Read More
+                  <Link href="/nosotros" className="tp-btn">
+                    Ver mas
                   </Link>
                 </div>
               </div>

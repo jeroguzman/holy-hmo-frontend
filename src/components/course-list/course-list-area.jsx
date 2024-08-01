@@ -57,15 +57,14 @@ const  CourseListArea = () => {
                         <div className="tpcourse__meta tpcourse__meta-gap pb-15 mb-15">
                           <ul className="d-flex align-items-center">
                             <li>
-                              
-                             <span>{moment(item.datetime).format('LL')} a las {moment(item.datetime).format('LT')} horas</span>
+                              <span>{moment(item.datetime).format('LL')} a las {moment(item.datetime).format('LT')} horas</span>
                             </li>
                             <li>
                               <img
                                 src="/assets/img/icon/c-meta-02.png"
                                 alt="meta-icon"
                               />
-                              <span>{item.attendance}</span>
+                              <span>{item.attendance} {item.attendance > 1 ? 'asistentes' : 'asistente'}</span>
                             </li>
                           </ul>
                         </div>

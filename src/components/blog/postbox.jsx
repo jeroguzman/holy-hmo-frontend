@@ -21,147 +21,75 @@ const Postbox = () => {
   return (
     <>
       <div
-        className="postbox__area pt-120 pb-120 wow fadeInUp"
-        data-wow-duration=".8s"
-        data-wow-delay=".2s"
+        className="postbox__area pt-120 pb-120"
       >
         <div className="container">
           <div className="row">
-            <div className="col-xxl-8 col-xl-8 col-lg-7 col-md-12">
+            <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12">
               <div className="postbox__wrapper pr-20">
-                {blog_page_data.map((item, i) => (
                   <article
-                    key={i}
                     className="postbox__item format-image mb-60 transition-3"
                   >
-                    {item.img && (
-                      <div className="postbox__thumb w-img mb-30">
-                        <Link href="/blog-details">
-                          <img src={item?.img} alt="" />
-                        </Link>
-                      </div>
-                    )}
-
-                    {item.video &&
-                      item.video.map((v_link, i) => (
-                        <div
-                          key={i}
-                          className="postbox__thumb postbox__video p-relative w-img mb-30"
-                        >
-                          <Link href="/blog-details">
-                            <img src={v_link.video_tum} alt="" />
-                          </Link>
-
-                          {/* video modal start */}
-                          <VideoPopup
-                            isVideoOpen={isVideoOpen}
-                            setIsVideoOpen={setIsVideoOpen}
-                            videoId={v_link.videoId}
-                          />
-                          {/* video modal end */}
-
-                          <a
-                            onClick={() => setIsVideoOpen(true)}
-                            className="play-btn popup-video"
-                          >
-                            <i className="fas fa-play"></i>
-                          </a>
-                        </div>
-                      ))}
-
-                    {item.slider_img && (
-                      <div className="postbox__thumb postbox__slider w-img mb-30 p-relative">
-                        <button
-                          type="button"
-                          onClick={() => sliderRef?.current?.slickPrev()}
-                          className="slick-prev slick-arrow"
-                        >
-                          <i className="fi fi-rr-arrow-small-left"></i>
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => sliderRef?.current?.slickNext()}
-                          className="slick-next slick-arrow"
-                        >
-                          <i className="fi fi-rr-arrow-small-right"></i>
-                        </button>
-
-                        <div className="blog-item-active">
-                          <Slider {...setting} ref={sliderRef}>
-                            {item.slider_img.map((slide, i) => (
-                              <div key={i} className="postbox__slider-item">
-                                <img src={slide.img} alt="" />
-                              </div>
-                            ))}
-                          </Slider>
-                        </div>
-                      </div>
-                    )}
-
+                    <div className="postbox__thumb w-img mb-30">
+                      <Link href="/blog-details">
+                        <img src="https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=" alt="" />
+                      </Link>
+                    </div>
                     <div className="postbox__content">
                       <div className="postbox__meta">
                         <span>
-                          <i className="fi fi-rr-calendar"></i> {item.date}
+                          <i className="fi fi-rr-calendar"></i> Fecha
                         </span>
                         <span>
                           <Link href="#">
-                            <i className="fi fi-rr-user"></i> {item.user}
+                            <i className="fi fi-rr-user"></i> Autor
                           </Link>
                         </span>
                         <span>
                           <Link href="#">
                             <i className="fi fi-rr-comments"></i>{" "}
-                            {item.comments}
+                            Comentarios
                           </Link>
                         </span>
                       </div>
                       <h3 className="postbox__title">
-                        <Link href="/blog-details">{item.title}</Link>
+                        <Link href="/blog-details">Titulo</Link>
                       </h3>
                       <div className="postbox__text">
-                        <p>{item.des}</p>
+                        <p>Descripcion</p>
                       </div>
                       <div className="postbox__read-more">
                         <Link href="/blog-details" className="tp-btn">
-                          read more
+                          Leer mas
                         </Link>
                       </div>
                     </div>
                   </article>
-                ))}
-                <div className="basic-pagination">
-                  <nav>
-                    <ul>
-                      <li>
-                        <Link href="/blog">
-                          <i className="far fa-angle-left"></i>
-                        </Link>
-                      </li>
-                      <li>
-                        <span className="current">1</span>
-                      </li>
-                      <li>
-                        <Link href="/blog">2</Link>
-                      </li>
-                      <li>
-                        <Link href="/blog">3</Link>
-                      </li>
-                      <li>
-                        <Link href="/blog">
-                          <i className="far fa-angle-right"></i>
-                        </Link>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-            <div className="col-xxl-4 col-xl-4 col-lg-5 col-md-12">
-              <div className="sidebar__wrapper">
-                <BlogSearch />
-                <RecentPost />
-                <Category />
-                <Tags />
+                  <div className="basic-pagination">
+                    <nav>
+                      <ul>
+                        <li>
+                          <Link href="/blog">
+                            <i className="far fa-angle-left"></i>
+                          </Link>
+                        </li>
+                        <li>
+                          <span className="current">1</span>
+                        </li>
+                        <li>
+                          <Link href="/blog">2</Link>
+                        </li>
+                        <li>
+                          <Link href="/blog">3</Link>
+                        </li>
+                        <li>
+                          <Link href="/blog">
+                            <i className="far fa-angle-right"></i>
+                          </Link>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
               </div>
             </div>
           </div>

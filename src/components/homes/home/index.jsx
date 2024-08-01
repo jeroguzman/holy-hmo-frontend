@@ -19,14 +19,14 @@ const Home = () => {
       {/* <BrandArea style_2={true} /> */}
       <AboutArea />
       {/* <CategoryArea /> */}
-      <BlogArea />
       <CourseArea />
+      <BlogArea />
       {/* <VideoArea /> */}
       {/* <CounterArea style_counter={true} /> */}
-      <ChooseArea style_2={true} />
+      {/* <ChooseArea style_2={true} /> */}
       {/* <InstructorArea style_2={true} /> */}
       {/* <TestimonialAreaTwo /> */}
-      <SuitableArea  style_2={true} />
+      {/* <SuitableArea  style_2={true} /> */}
       
     </>
   );
