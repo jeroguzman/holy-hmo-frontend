@@ -48963,7 +48963,7 @@ div.choose-sub-color {
   border-radius: 0 0 5px 5px;
 }
 .tpcourse__title {
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.5;
   font-family: "Gordita-500";
   margin: 0 0 0 13px;
@@ -48971,13 +48971,13 @@ div.choose-sub-color {
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px), (max-width: 767px) {
   .tpcourse__title {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.4;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .tpcourse__title {
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.4;
   }
 }

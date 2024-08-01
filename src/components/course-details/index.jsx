@@ -1,17 +1,19 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Breadcrumb from "../bredcrumb/breadcrumb";
-import CounterArea from "../homes/home/counter-area";
-import CourseArea from "./course-area";
 import CourseDetailsArea from "./course-details-area";
 
-const CourseDetails = () => {
-  return (
+const CourseDetails = ({setEvento}) => {
+  const [event, setEvent] = useState(null);
+
+  useEffect(() => {
+    setEvento(event);
+  }, [event]);
+  
+  return (  
     <>
-      <Breadcrumb title="Nombre evento" subtitle="Nombre evento" isDbbl="Eventos" />
-      <CourseDetailsArea />
-      <CourseArea />
-      <CounterArea />
+      <Breadcrumb title={event} subtitle={event} isDbbl="Eventos" />
+      <CourseDetailsArea setEvent={setEvent} />
     </>
   );
 };
